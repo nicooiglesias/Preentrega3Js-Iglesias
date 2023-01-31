@@ -1,3 +1,4 @@
+
 let carrito = [];
 let subTotal = [];
 let total;
@@ -8,10 +9,10 @@ let botonBuscarJs = document.getElementById("botonBuscar");
 let inputBuscarHtml = document.getElementById("inputBuscar");
 let contenedorCarritoJs = document.getElementById("contenedorCarrito");
 let mostrarCarro = document.getElementById("mostrar");
+
 inputBuscarHtml.onchange = realizarBusqueda;
 botonBuscarJs.onclick = realizarBusqueda;
 mostrarCarro.onclick = visualizacionCarrito
-
 
 let checkCategorias = document.getElementsByClassName("categorias");
 for (const checkCategoria of checkCategorias) {
@@ -59,7 +60,8 @@ function mostrarProducto(producto) {
 console.log(productos)
 mostrarProducto(productos)
 
-//muestra o oculta el contenido en carrito
+
+//muestra  el contenido en carrito
 function visualizacionCarrito() {
     contenedorPrincipal.classList.toggle("ocultar");
     contenedorCarritoJs.classList.toggle("ocultar");
@@ -112,7 +114,6 @@ function renderisadoCarrito() {
                     <button  id=finalizar_compra>Finalizar comprar</button>
                 </div>
             `;
-            
         let botonesSumar = document.querySelectorAll(`.class_boton_agregar`);
         let botonesRestar = document.querySelectorAll(`.class_boton_restar`);
         let botonesEliminarArticulos = document.querySelectorAll(`.botones_quitar`);
@@ -133,7 +134,7 @@ function renderisadoCarrito() {
     }
 };
 
-//funcion para ver si checkbox esta selecionado
+//funcion para ver si checkbox esta on
 
 function filtradoCheck() {
     filtroCheck = [];
@@ -239,16 +240,16 @@ function envio_info() {
         `
     );
     ventana_envio.innerHTML = `
-        <div id=envio_productos>
+        <div id= envio_productos>
             ${ventana_envio.innerHTML}
             <div>
-                <span> Total: $${total} </span>
+                <span> Total: $ ${total} </span>
                 <button  id=boton_volver>volver a la tienda</button>
                 <button  id=boton_confirmar>confirmar compra</button>
             </div>
         </div>
     `;
-    cuerpo.appendChild(ventana_envio)
+    cuerpo.appendChild(ventana_envio);
 
     let boton_confirmar = document.getElementById("boton_confirmar")
     boton_confirmar.onclick = realizar_comprar
@@ -260,7 +261,7 @@ function envio_info() {
         ventana_envio.innerHTML = `
         <div id=envio_productos>
             <p>
-                    Gracias por comprar en rage
+                    Agradesemos su compra
                 </p>
                 <button  id=boton_aceptar>aceptar</button>
             </div>   
