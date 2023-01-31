@@ -112,6 +112,7 @@ function renderisadoCarrito() {
                     <button  id=finalizar_compra>Finalizar comprar</button>
                 </div>
             `;
+            
         let botonesSumar = document.querySelectorAll(`.class_boton_agregar`);
         let botonesRestar = document.querySelectorAll(`.class_boton_restar`);
         let botonesEliminarArticulos = document.querySelectorAll(`.botones_quitar`);
@@ -259,7 +260,7 @@ function envio_info() {
         ventana_envio.innerHTML = `
         <div id=envio_productos>
             <p>
-                    Agradesemos su compra
+                    Gracias por comprar en rage
                 </p>
                 <button  id=boton_aceptar>aceptar</button>
             </div>   
