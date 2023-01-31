@@ -244,8 +244,8 @@ function envio_info() {
             ${ventana_envio.innerHTML}
             <div>
                 <span> Total: $ ${total} </span>
-                <button  id=boton_volver>volver a la tienda</button>
-                <button  id=boton_confirmar>confirmar compra</button>
+                <button  id=boton_volver> Volver a la tienda</button>
+                <button  id=boton_confirmar> Confirmar compra</button>
             </div>
         </div>
     `;
@@ -261,7 +261,7 @@ function envio_info() {
         ventana_envio.innerHTML = `
         <div id=envio_productos>
             <p>
-                    Agradesemos su compra
+                    Gracias por comprar en rage!
                 </p>
                 <button  id=boton_aceptar>aceptar</button>
             </div>   
@@ -284,7 +284,7 @@ function envio_info() {
         ventana_envio.classList.remove("ventana_finalizado_comprar")
         contenedorCarritoJs.innerHTML = `
         <div >
-            <span>No tiene articulos en su carrito </span>
+            <span> No tiene articulos en su carrito </span>
         </div>
     `;
     }
