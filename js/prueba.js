@@ -1,31 +1,25 @@
-
 let carrito = [];
 let subTotal = [];
 let total;
 let filtrados = "";
 let filtroCheck = [];
-
 let cuerpo = document.getElementById("mainHtml");
-
 let botonBuscarJs = document.getElementById("botonBuscar");
 let inputBuscarHtml = document.getElementById("inputBuscar");
-
-inputBuscarHtml.onchange = realizarBusqueda;
-
-
 let contenedorCarritoJs = document.getElementById("contenedorCarrito");
-botonBuscarJs.onclick = realizarBusqueda;
-
 let mostrarCarro = document.getElementById("mostrar");
+inputBuscarHtml.onchange = realizarBusqueda;
+botonBuscarJs.onclick = realizarBusqueda;
 mostrarCarro.onclick = visualizacionCarrito
 
+
 let checkCategorias = document.getElementsByClassName("categorias");
-for (const checkCategoria of checkCategorias) {//para esuchar todos los click de ccategorias(tambien esta hecho con query selllector)
+for (const checkCategoria of checkCategorias) {
     checkCategoria.onclick = filtradoCheck;
 };
 
-
-function mostrarProducto(producto) {//funtion para crear caja contenedores de productos
+//funcion para crear caja contenedores de productos
+function mostrarProducto(producto) {
     contenedorPrincipal.innerHTML = "";
     producto.forEach((e) => {
         let contenedorProducto = document.createElement("article");
@@ -48,8 +42,8 @@ function mostrarProducto(producto) {//funtion para crear caja contenedores de pr
         contenedorPrincipal.appendChild(contenedorProducto);
     });
 
-    let botonAgregarCarrito = document.querySelectorAll(`.boton_agregar`);//otra forma de seleccionar todo las clases
-    botonAgregarCarrito.forEach((e) => e.onclick = agregarCarrito);//otra forma de esuchar el evento
+    let botonAgregarCarrito = document.querySelectorAll(`.boton_agregar`);
+    botonAgregarCarrito.forEach((e) => e.onclick = agregarCarrito);
     if (localStorage.getItem("productoUsuario") != null) {
         carrito = JSON.parse(localStorage.getItem("productoUsuario"));
         renderisadoCarrito();
@@ -65,8 +59,8 @@ function mostrarProducto(producto) {//funtion para crear caja contenedores de pr
 console.log(productos)
 mostrarProducto(productos)
 
-
-function visualizacionCarrito() {//muestra o oculta lo contenido en carrito
+//muestra o oculta el contenido en carrito
+function visualizacionCarrito() {
     contenedorPrincipal.classList.toggle("ocultar");
     contenedorCarritoJs.classList.toggle("ocultar");
     if (mostrarCarro.innerText.includes("ocultar") == false) {
@@ -138,7 +132,7 @@ function renderisadoCarrito() {
     }
 };
 
-//funcion para ver si checkbox esta selecionado o no
+//funcion para ver si checkbox esta selecionado
 
 function filtradoCheck() {
     filtroCheck = [];
@@ -157,7 +151,7 @@ function filtradoCheck() {
     }
 };
 
-//funcion para extrar el numeros de las clase creadas con js para comparar con los id del array
+
 function extractorNumero(cadena) {
     let idObtenido = "";
     for (i = 0; i < cadena.length; i++) {
@@ -168,7 +162,7 @@ function extractorNumero(cadena) {
     return idObtenido;
 };
 
-//funcion para cambiar el espacio por "_" para comparar las id asociadas a las class categorias de el html con las categorias de js
+
 function cambioEspacios(cadena) {
     let resultado = "";
     for (i = 0; i < cadena.length; i++) {
